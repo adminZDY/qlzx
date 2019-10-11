@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  
+  <listener>
+  	<description>这是一个session监听器，可以提供session创建和移除</description>
+     <listener-class>com.user.listener</listener-class>
+  </listener>
+  
+   <filter>      <!--注意这里是filter，不要配置成servlet-->
+    <filter-name>CharactorFilter</filter-name>    <!--过滤器名称-->
+	   <filter-class>com.user.CharactorFilter</filter-class>  <!--过滤器的完整类名-->  
+	     <init-param>   <!--初始化参数-->  
+	         <param-name>encoding</param-name>  <!--参数名称-->  
+	         <param-value>utf-8</param-value>   <!--参数值-->  
+	     </init-param>
+	</filter>
+  <filter-mapping> <!--过滤器映射--> 
+      <filter-name>CharactorFilter</filter-name><!--过滤器名称-->   
+      <url-pattern>/*</url-pattern><!--URL映射，给所有页面处理乱码-->  
+  </filter-mapping>
+  
+<!-- <session-config>
+	<session-timeout>5</session-timeout>
+  </session-config> -->
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SystemManage</servlet-name>
+    <servlet-class>com.sec.control.SystemManage</servlet-class>
+    
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BulletinManage</servlet-name>
+    <servlet-class>com.sec.control.BulletinManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CustomerManage</servlet-name>
+    <servlet-class>com.sec.control.CustomerManage</servlet-class>
+  </servlet>
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PayManage</servlet-name>
+    <servlet-class>com.sec.control.PayManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CustomerForwardManage</servlet-name>
+    <servlet-class>com.sec.control.CustomerForwardManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxGetIsEmailExists</servlet-name>
+    <servlet-class>com.sec.control.AjaxGetIsEmailExists</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsManage</servlet-name>
+    <servlet-class>com.sec.control.GoodsManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OrderManage</servlet-name>
+    <servlet-class>com.sec.control.OrderManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsTypeManage</servlet-name>
+    <servlet-class>com.sec.control.GoodsTypeManage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxCartManage</servlet-name>
+    <servlet-class>com.sec.control.AjaxCartManage</servlet-class>
+  </servlet>
+	<servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>com.alipay.config.PayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CartManage</servlet-name>
+    <servlet-class>com.sec.control.CartManage</servlet-class>
+  </servlet>
+ <servlet>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.runoob.test.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>upload</servlet-name>
+    <servlet-class>Ckeditor.upload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ImgUpload</servlet-name>
+    <servlet-class>Ckeditor.ImgUpload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ReviewManage</servlet-name>
+    <servlet-class>com.sec.control.ReviewManage</servlet-class>
+  </servlet>
+
+
+
+   
+   
+   
+   
+   
+   
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SystemManage</servlet-name>
+    <url-pattern>/servlet/SystemManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BulletinManage</servlet-name>
+    <url-pattern>/servlet/BulletinManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerManage</servlet-name>
+    <url-pattern>/servlet/CustomerManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerForwardManage</servlet-name>
+    <url-pattern>/servlet/CustomerForwardManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxGetIsEmailExists</servlet-name>
+    <url-pattern>/servlet/AjaxGetIsEmailExists</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsManage</servlet-name>
+    <url-pattern>/servlet/GoodsManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderManage</servlet-name>
+    <url-pattern>/servlet/OrderManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsTypeManage</servlet-name>
+    <url-pattern>/servlet/GoodsTypeManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxCartManage</servlet-name>
+    <url-pattern>/servlet/AjaxCartManage</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>PayManage</servlet-name>
+    <url-pattern>/servlet/PayManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/servlet/PayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartManage</servlet-name>
+    <url-pattern>/servlet/CartManage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>upload</servlet-name>
+    <url-pattern>/servlet/upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImgUpload</servlet-name>
+    <url-pattern>/servlet/ImgUpload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReviewManage</servlet-name>
+    <url-pattern>/servlet/ReviewManage</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
