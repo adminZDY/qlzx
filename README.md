@@ -19,7 +19,7 @@
  http:localhost:8080/qlzx/admin/index.jsp(后台页面)
  
  总结：
- 这个项目用到了支付宝的支付接口，相关的配置需要去蚂蚁金服开发平台（https://www.ant-open.com/platform/home.htm）
+ 这个项目用到了支付宝的支付接口，相关的配置需要去蚂蚁金服开发平台https://www.ant-open.com/platform/home.htm
  注册登录搭建沙箱环境（测试环境，还不是真正的环境。测试环境里模拟了一个客户和商家，客户和商家可以充钱，可以支付），当然你可以不用搭建，但这样的话，你使用的是我的环境。
  关于沙箱环境搭建可以参考这个网站进行配置https://www.jianshu.com/p/a16a6d4f7121
  相关配置修改要去项目中 qlzx/src/com/alipay/config/AlipayConfig.java 中修改
